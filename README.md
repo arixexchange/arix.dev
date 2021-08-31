@@ -2,4 +2,4 @@
 
 # ARIX Wiki
 
-The ARIX (Amateur Radio Internet Exchange) wiki is availble at https://wiki.arix.dev
+The ARIX (Amateur Radio Internet Exchange) wiki is available at https://wiki.arix.dev
