@@ -2,7 +2,7 @@
 
 # Amateur Radio Internet Exchange
 
-Welcome to the Amateur Radio Internet Exchange Wiki. ARIX is an internet exchange point for licensed amateur radio
+Welcome to the Amateur Radio Internet Exchange. ARIX is an internet exchange point for licensed amateur radio
 operators for the use of networking research, development, and education.
 
 ## Connectivity

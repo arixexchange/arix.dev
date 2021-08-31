@@ -19,5 +19,5 @@ jobs:
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CUSTOM_DOMAIN: wiki.arix.dev
+          CUSTOM_DOMAIN: arix.dev
           CONFIG_FILE: mkdocs.yml
