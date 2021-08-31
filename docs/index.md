@@ -1,24 +1,38 @@
-# ARIX Wiki
+![ARIX Logo](https://arix.dev/logo.png)
+
+# Amateur Radio Internet Exchange
 
 Welcome to the Amateur Radio Internet Exchange Wiki. ARIX is an internet exchange point for licensed amateur radio
 operators for the use of networking research, development, and education.
 
-## Members
+## Connectivity
 
-| Name                        | Callsign       | ASN    | Connection          | IPs                              |
-| --------------------------- | -------------- | ------ | ------------------- | -------------------------------- |
-| ARIX                        | N7ARX          | 44977  | Fremont, CA SW1 10G | 44.190.42.1   2602:801:30ff::1   |
-| Nathan Sales                | KJ7DMC         | 34553  | Fremont, CA SW1 10G | 44.190.42.2   2602:801:30ff::2   |
-| Nathan Sales 2              | KJ7DMC         | 34553  | Fremont, CA SW1 10G | 44.190.42.3   2602:801:30ff::3   |
-| Airgapped                   | KC7GDY         | 6556   | Fremont, CA SW2 10G | 44.190.42.4   2602:801:30ff::4   |
-| 10VPN Research Network      | VE7ALB         | 49134  | Fremont, CA SW1 1G  | 44.190.42.5   2602:801:30ff::5   |
-| AZSignShop                  | KC7GDY         | 60564  | Fremont, CA SW1 10G | 44.190.42.6   2602:801:30ff::6   |
-| Keaton Alexander Guger Lair | VE5LPL         | 50555  | Fremont, CA SW1 10G | 44.190.42.7   2602:801:30ff::7   |
-| Two P                       | K6MPP & KC6GNJ | 6140   | Fremont, CA SW2 10G | 44.190.42.8   2602:801:30ff::8   |
-| 617A Corporation            | KJ7THM         | 399135 | Fremont, CA SW1 10G | 44.190.42.9   2602:801:30ff::9   |
-| AS205907 Development        | KJ7DMC         | 205907 | Fremont, CA SW1 10G | 44.190.42.10  2602:801:30ff::10  |
-| Ansible Networks            | KF6DMA         | 14570  | Fremont, CA SW1 10G | 44.190.42.11  2602:801:30ff::11  |
-| YuYan Research Network      | K6TTI          | 207292 | Fremont, CA SW2 10G | 44.190.42.12  2602:801:30ff::12  |
-| AS112                       | N7ARX          | 112    | Fremont, CA SW1 10G | 44.190.42.252 2602:801:30ff::252 |
-| ARIX Route Server           | N7ARX          | 47192  | Fremont, CA SW1 10G | 44.190.42.253 2602:801:30ff::253 |
-| ARIX Route Server           | N7ARX          | 47192  | Fremont, CA SW2 10G | 44.190.42.254 2602:801:30ff::254 |
+- 2.4GHz 802.11n - Portland, OR
+- 2.4GHz/5GHz 802.11n - Flagstaff, AZ
+- SMF 1G-LX / 10G-LR or RJ45 (1G) - Hurricane Electric FMT2, Fremont, CA
+- Virtual Machine - contact us for more information
+
+## Contact
+
+The ARIX team can be contacted by email at info@arix.dev, or join #arix on libera.chat for general discussion.
+
+## Policy
+
+If an ARIX member cause issues for the exchange, other members, or the internet at large, intentionally or
+unintentionally, the offending port may be brought down until the issue is corrected.
+
+- Only announce IP space that you're authorized to announce.
+- Only IPv4, ARP, IPv6, and NDP L2 protocols are permitted.
+- Only one MAC address per port without prior authorization.
+
+## Route Servers
+
+ARIX operates route servers to aid members in their peering endeavours. See the members table above for peering
+information. The route servers run Pathvector and enforce strict IRR, RPKI, max-prefix, and Tier 1 ASN filtering. Please
+keep your PeeringDB page up to date, as configuration is automatically built from PeeringDB.
+
+## BGP Communities
+
+All routes are tagged with 47192,1 and 47192:0:PEER_ASN where PEER_ASN is the ASN the route was learned from. To exclude
+a route from being announced to all peers, add 47192,0. To exclude a route from being announced to a specific peer, add
+47192:0:PEER_ASN (47192,PEER_ASN will work too if the peer's ASN fits in a 16-bit integer).

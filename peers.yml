@@ -1,0 +1,154 @@
+peers:
+  - name: ARIX
+    website: "https://arix.dev"
+    asn: 44977
+    callsign: N7ARX
+    pop: Fremont, CA
+    switch: 1
+    speed: 10000
+    ipv4: 44.190.42.2
+    ipv6: 2602:801:30ff::2
+    email: info@arix.dev
+
+  - name: Nathan Sales
+    website: "https://natesales.net/network"
+    asn: 34553
+    callsign: KJ7DMC
+    pop: Fremont, CA
+    switch: 1
+    speed: 10000
+    ipv4: 44.190.42.3
+    ipv6: "2602:801:30ff::3"
+    email: nate@natesales.net
+
+  - name: Airgapped
+    website: "https://airgapped.io"
+    asn: 6556
+    callsign: KC7GDY
+    pop: Fremont, CA
+    switch: 2
+    speed: 10000
+    ipv4: 44.190.42.4
+    ipv6: "2602:801:30ff::4"
+    email: info@airgapped.io
+
+  - name: 10VPN Research Network
+    website: "https://10vpn.net"
+    asn: 49134
+    callsign: VE7ALB
+    pop: Fremont, CA
+    switch: 1
+    speed: 1000
+    ipv4: 44.190.42.5
+    ipv6: "2602:801:30ff::5"
+    email: helpdesk@10vpn.net
+
+  - name: AZSignShop
+    website: "https://azsignshop.com"
+    asn: 60564
+    callsign: KC7GDY
+    pop: Fremont, CA
+    speed: 10000
+    switch: 1
+    ipv4: 44.190.42.6
+    ipv6: "2602:801:30ff::6"
+    email: info@azsignshop.com
+
+  - name: Keaton Alexander Guger Lair
+    website: "https://kagl.me"
+    asn: 50555
+    callsign: VE5LPL
+    pop: Fremont, CA
+    speed: 10000
+    switch: 1
+    ipv4: 44.190.42.7
+    ipv6: "2602:801:30ff::7"
+    email: me@kagl.me
+
+  - name: Two P
+    website: "https://twop.co"
+    asn: 6140
+    callsign: K6MPP & KC6GNJ
+    pop: Fremont, CA
+    speed: 10000
+    switch: 2
+    ipv4: 44.190.42.8
+    ipv6: "2602:801:30ff::8"
+    email: tech-c@twop.co
+
+  - name: 617A Corporation
+    website: "https://617a.net"
+    asn: 399135
+    callsign: KJ7THM
+    pop: Fremont, CA
+    speed: 10000
+    switch: 1
+    ipv4: 44.190.42.9
+    ipv6: "2602:801:30ff::9"
+    email: az@kj7thm.com
+
+  - name: AS205907 Development
+    website: "https://natesales.net/network"
+    asn: 205907
+    callsign: KJ7DMC
+    pop: Fremont, CA
+    speed: 10000
+    switch: 1
+    ipv4: 44.190.42.10
+    ipv6: "2602:801:30ff::10"
+    email: nate@natesales.net
+
+  - name: Ansible Networks
+    website: "https://www.peeringdb.com/net/23475"
+    asn: 14570
+    callsign: KF6DMA
+    pop: Fremont, CA
+    speed: 10000
+    switch: 1
+    ipv4: 44.190.42.11
+    ipv6: "2602:801:30ff::11"
+    email: clive@ansible.org
+
+  - name: YuYan Research Network
+    website: "https://alleysakura.net/"
+    asn: 207292
+    callsign: K6TTI
+    pop: Fremont, CA
+    speed: 10000
+    switch: 2
+    ipv4: 44.190.42.12
+    ipv6: "2602:801:30ff::12"
+    email: noc@alleysakura.net
+
+  - name: AS112
+    website: "https://as112.net"
+    asn: 112
+    callsign: N7ARX
+    pop: Fremont, CA
+    speed: 10000
+    switch: 1
+    ipv4: 44.190.42.252
+    ipv6: "2602:801:30ff::252"
+    email: info@arix.dev
+
+  - name: ARIX Route Server
+    website: "https://arix.dev"
+    asn: 47192
+    callsign: N7ARX
+    pop: Fremont, CA
+    speed: 10000
+    switch: 1
+    ipv4: 44.190.42.253
+    ipv6: "2602:801:30ff::253"
+    email: info@arix.dev
+
+  - name: ARIX Route Server
+    website: "https://arix.dev"
+    asn: 47192
+    callsign: N7ARX
+    pop: Fremont, CA
+    speed: 10000
+    switch: 2
+    ipv4: 44.190.42.254
+    ipv6: "2602:801:30ff::254"
+    email: info@arix.dev
