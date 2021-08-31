@@ -1,0 +1,10 @@
+site_name: Amateur Radio Internet Exchange
+theme:
+  name: material
+  logo: logo.png
+  favicon: logo.png
+  custom_dir: overrides
+  palette:
+    scheme: slate
+extra_css:
+  - stylesheets/extra.css
