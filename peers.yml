@@ -120,6 +120,30 @@ peers:
     ipv6: "2602:801:30ff::12"
     email: noc@alleysakura.net
 
+  - name: Internet Technology Laboratory
+    website: https://connect.itlab.cc/
+    asn: 38254
+    callsign: BM4LOB
+    pop: Fremont, CA
+    speed: 1000
+    switch: 2
+    ipv4: 44.190.42.13
+    ipv6: "2602:801:30ff::13"
+    email: noc@itlab.cc
+
+  - name: SteveYi Network Service
+    website: https://steveyi.net/
+    asn: 60614
+    callsign: BM5GRC
+    pop: Fremont, CA
+    speed: 1000
+    switch: 2
+    ipv4: 44.190.42.14
+    ipv6: "2602:801:30ff::14"
+    email: jackcooku@steveyi.net
+
+  # IX Services
+
   - name: AS112
     website: "https://as112.net"
     asn: 112
