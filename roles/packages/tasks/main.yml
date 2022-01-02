@@ -1,0 +1,19 @@
+- name: Copy source.list
+  template:
+    src: sources.list
+    dest: /etc/apt/sources.list
+
+- name: Get pathvector key
+  get_url:
+    url: https://repo.pathvector.io/pgp.asc
+    dest: /usr/share/keyrings/pathvector.asc
+
+- name: Install packages
+  apt:
+    update_cache: yes
+    pkg:
+      - sudo
+      - git
+      - curl
+      - pathvector
+      - bird2

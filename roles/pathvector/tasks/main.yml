@@ -1,0 +1,20 @@
+- name: Include vars
+  include_vars: peers.yml
+
+- name: Copy Pathvector config
+  template:
+    src: pathvector.yml.j2
+    dest: /etc/pathvector.yml
+  register: pathvector_config
+
+- name: Apply Pathvector config
+  shell: pathvector g
+  when: pathvector_config.changed
+
+- name: Add BGP aliases
+  copy:
+    content: |
+      alias bgpc="birdc conf"
+      alias bgps="birdc s p | sed '1d;' | column -t"
+      alias b="birdc"
+    dest: /root/.bashrc

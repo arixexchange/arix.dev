@@ -1,0 +1,5 @@
+- name: Configure route servers
+  hosts: route-servers
+  roles:
+    - packages
+    - pathvector

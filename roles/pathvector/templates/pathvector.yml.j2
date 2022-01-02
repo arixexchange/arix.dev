@@ -1,0 +1,36 @@
+asn: 47192
+router-id: {{ ipv4 }}
+keep-filtered: true
+kernel-export: false
+default-route: false
+templates:
+  peer:
+    filter-transit-asns: true
+    auto-import-limits: true
+    auto-as-set: true
+    rs-client: true
+    filter-irr: true
+    pre-import: if ((47192, 0) ~ bgp_community) then reject;
+    listen4: {{ ipv4 }}
+    listen6: {{ ipv6 }}
+    remove-communities: [ "47192,1" ]
+    announce-communities: [ "47192,1" ]
+
+peers:
+{% for peer in peers if peer["asn"] != 47192 %}
+  {{ peer["name"] }}:
+    asn: {{ peer["asn"] }}
+    template: peer
+    import-communities: [ "47192,1", "47192:1:{{ peer["asn"] }}" ]
+    interpret-communities: false
+    pre-export: |
+        {% if peer["asn"] < 65535 %}
+        if ((47192, {{ peer["asn"] }}) ~ bgp_community) then reject;
+        {% endif %}
+        if ((47192, 0, {{ peer["asn"] }}) ~ bgp_large_community) then reject;
+
+    neighbors:
+      - {{ peer["ipv4"] }}
+      - {{ peer["ipv6"] }}
+
+{% endfor %}
