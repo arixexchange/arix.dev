@@ -1,3 +1,7 @@
+"""
+parse.py builds the ixf.json and members.md files
+"""
+
 import json
 import yaml
 
@@ -46,6 +50,9 @@ for peer in peers["peers"]:
         ]
     })
     peers_table += f"| [{peer['name']}]({peer['website']}) | [{peer['asn']}](https://bgp.tools/as/{peer['asn']}) | {peer['callsign']} | {peer['pop']} SW{peer['switch']} | {peer['ipv4']} {peer['ipv6']} |\n"
+
+with open("docs/members.md", "w") as members_file:
+    members_file.write(peers_table)
 
 # Write IXF JSON file
 with open("docs/ixf.json", "w") as ixf_file:
@@ -106,6 +113,3 @@ with open("docs/ixf.json", "w") as ixf_file:
     }
 
     ixf_file.write(json.dumps(ixf))
-
-with open("docs/members.md", "w") as members_file:
-    members_file.write(peers_table)
