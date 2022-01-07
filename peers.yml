@@ -87,16 +87,16 @@ peers:
     ipv6: "2602:801:30ff::9"
     email: az@kj7thm.com
 
-  - name: AS205907 Development
-    website: "https://natesales.net/network"
-    asn: 205907
-    callsign: KJ7DMC
-    pop: Fremont, CA
-    speed: 10000
-    switch: 1
-    ipv4: 44.190.42.10
-    ipv6: "2602:801:30ff::10"
-    email: nate@natesales.net
+#  - name:
+#    website:
+#    asn:
+#    callsign
+#    pop:
+#    speed:
+#    switch:
+#    ipv4: 44.190.42.10
+#    ipv6: "2602:801:30ff::10"
+#    email:
 
   - name: Ansible Networks
     website: "https://www.peeringdb.com/net/23475"
