@@ -51,7 +51,7 @@ for peer in peers["peers"]:
     })
     peers_table += f"| [{peer['name']}]({peer['website']}) | [{peer['asn']}](https://peeringdb.com/asn/{peer['asn']}) | {peer['callsign']} | {peer['pop']} SW{peer['switch']} | {peer['ipv4']} {peer['ipv6']} |\n"
 
-peers_table = f"There are {len(ixf_members)} members on the exchange.\n\n"+peers_table
+peers_table = f"# Members\n\nThere are {len(ixf_members)} members on the exchange.\n\n"+peers_table
 with open("docs/members.md", "w") as members_file:
     members_file.write(peers_table)
 
