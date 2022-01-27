@@ -142,6 +142,17 @@ peers:
     ipv6: "2602:801:30ff::14"
     email: jackcooku@steveyi.net
 
+  - name: ISC F Root
+    website: https://isc.org/f-root
+    asn: 27321
+    callsign: W3ZUL
+    pop: Fremont, CA
+    speed: 1000
+    switch: 2
+    ipv4: 44.190.42.15
+    ipv6: "2602:801:30ff::15"
+    email: danm@prime.gushi.org
+
   # IX Services
 
   - name: AS112
