@@ -36,7 +36,7 @@
 
 <img alt="ARIX Logo" src="logo.png" width="300px">
 <p>Amateur Radio Internet Exchange</p>
-<p>Welcome to the Amateur Radio Internet Exchange. ARIX is an internet exchange point for licensed amateur radio operators for the use of networking research, development, and education.</p>
+<p>Welcome to the Amateur Radio Internet Exchange. ARIX is an internet exchange point for licensed amateur radio operators for the use of networking research, development, and education. See our <a href="https://www.peeringdb.com/ix/3069">PeeringDB page</a> for more information.</p>
 
 <h2>Connectivity</h2>
 <ul>
@@ -67,10 +67,15 @@ If an ARIX member cause issues for the exchange, other members, or the internet 
 </ul>
 <p>The route servers run <a href="https://bird.network.cz">BIRD</a> and <a href="https://pathvector.io">Pathvector</a> and enforce strict IRR, RPKI, max-prefix, and Tier 1 ASN filtering.</p>
 <p>Please keep your PeeringDB page up to date, as configuration profiles are built automatically.</p>
+<p>The route servers are BGP passive so your side must be configured as BGP active.</p>
 
+<h3>Remotely Triggered Blackhole (RTBH)</h3>
+<p>ARIX operates a blackhole server at 44.190.42.251 and 2602:801:30ff::251. Members may add the <a href="https://datatracker.ietf.org/doc/html/rfc7999">RFC7999</a> blackhole community (655335:666) to /32 IPv4 and /128 IPv6 routes to instruct the route servers to blackhole the route.</p>
+
+<h3>BGP Communities</h3>
 <p>The route servers pass along all communities to peers (NO_EXPORT for example). They also add information communities and accept action communities from peers:</p>
 
-<h3>Informational Communities</h3>
+<h4>Informational Communities</h4>
 <table>
     <thead>
     <tr>
@@ -93,7 +98,7 @@ If an ARIX member cause issues for the exchange, other members, or the internet 
     </tbody>
 </table>
 
-<h3>Action Communities</h3>
+<h4>Action Communities</h4>
 <table>
     <thead>
     <tr>
@@ -109,7 +114,7 @@ If an ARIX member cause issues for the exchange, other members, or the internet 
         <td>Don&#39;t announce to any peer</td>
     </tr>
     <tr>
-        <td>47192:x</td>
+        <td></td>
         <td>47192:0:x</td>
         <td>Don&#39;t announce to ASx</td>
     </tr>
@@ -273,6 +278,8 @@ If an ARIX member cause issues for the exchange, other members, or the internet 
     
     </tbody>
 </table>
+
+<p>The ARIX IXF feed is available at <a href="https://arix.dev/ixf.json">https://arix.dev/ixf.json</a></p>
 
 <footer>
     Amateur Radio Internet Exchange | FCC Callsign N7ARX
