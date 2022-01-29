@@ -5,12 +5,14 @@ kernel-export: false
 default-route: false
 templates:
   peer:
+    passive: true
     filter-transit-asns: true
+    filter-rpki: true
+    filter-irr: true
     auto-import-limits: true
     auto-as-set: true
     rs-client: true
-    filter-irr: true
-    pre-import: if ((47192, 0) ~ bgp_community) then reject;
+    interpret-communities: false
     listen4: {{ ipv4 }}
     listen6: {{ ipv6 }}
     remove-communities: [ "47192,1" ]
@@ -22,8 +24,19 @@ peers:
     asn: {{ peer["asn"] }}
     template: peer
     import-communities: [ "47192,1", "47192:1:{{ peer["asn"] }}" ]
-    interpret-communities: false
+
+    pre-import: |
+        if ((65535, 666) ~ bgp_community) then {
+            bgp_community.add((47192, 0));
+            if (net.type = NET_IP4) then {
+                bgp_next_hop = 44.190.42.251;
+            } else {
+                bgp_next_hop = 2602:801:30ff::251;
+            }
+        }
+
     pre-export: |
+        if ((47192, 0) ~ bgp_community) then reject;
         {% if peer["asn"] < 65535 %}
         if ((47192, {{ peer["asn"] }}) ~ bgp_community) then reject;
         {% endif %}

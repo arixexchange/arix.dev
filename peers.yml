@@ -155,6 +155,10 @@ peers:
 
   # IX Services
 
+  # RTBH Server on the AS112 VM:
+  # 44.190.42.251
+  # 2602:801:30ff::251
+
   - name: AS112
     website: "https://as112.net"
     asn: 112
