@@ -1,0 +1,152 @@
+<html lang="en">
+<head>
+    <title>ARIX | Amateur Radio Internet Exchange</title>
+    <link href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --background: #151515;
+            --background-body: #0f0f0f;
+            --background-alt: #272727;
+            --selection: #acacac;
+            --text-main: #e3e3e3;
+            --text-bright: #ffffff;
+            --text-muted: #a9b1ba;
+            --links: #fff;
+            --focus: rgba(230, 230, 230, 0.67);
+            --border: #acacac;
+            --code: #ffffff;
+            --animation-duration: 0.1s;
+            --button-base: #373737;
+            --button-hover: #121212;
+            --scrollbar-thumb: var(--button-hover);
+            --scrollbar-thumb-hover: #ffffff;
+            --form-placeholder: #a9a9a9;
+            --form-text: #fff;
+            --variable: #acacac;
+            --highlight: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+<img alt="ARIX Logo" src="logo.png" width="300px">
+<p>Amateur Radio Internet Exchange</p>
+<p>Welcome to the Amateur Radio Internet Exchange. ARIX is an internet exchange point for licensed amateur radio operators for the use of networking research, development, and education.</p>
+
+<h2>Connectivity</h2>
+<ul>
+    <li>2.4GHz 802.11n - Portland, OR</li>
+    <li>2.4GHz/5GHz 802.11n - Flagstaff, AZ</li>
+    <li>SMF 1G-LX / 10G-LR or RJ45 (1G) - Hurricane Electric FMT2, Fremont, CA</li>
+    <li>Virtual Machine - contact us for more information</li>
+</ul>
+
+<h2>Contact</h2>
+The ARIX team can be contacted by email at info@arix.dev, or join #arix on libera.chat for general discussion.
+
+<h2>Policy</h2>
+If an ARIX member cause issues for the exchange, other members, or the internet at large, intentionally or unintentionally, the offending port may be brought down until the issue is corrected.
+<ul>
+    <li>Only announce IP space that you're authorized to announce.</li>
+    <li>Only IPv4, ARP, IPv6, and NDP L2 protocols are permitted.</li>
+    <li>Only one MAC address per port without prior authorization.</li>
+</ul>
+
+<h2>Route Servers</h2>
+<p>The ARIX route servers use AS47192 on the following addresses:</p>
+<ul>
+    <li>44.190.42.253</li>
+    <li>2602:801:30ff::253</li>
+    <li>44.190.42.254</li>
+    <li>2602:801:30ff::254</li>
+</ul>
+<p>The route servers run <a href="https://bird.network.cz">BIRD</a> and <a href="https://pathvector.io">Pathvector</a> and enforce strict IRR, RPKI, max-prefix, and Tier 1 ASN filtering.</p>
+<p>Please keep your PeeringDB page up to date, as configuration profiles are built automatically.</p>
+
+<h2>BGP Communities</h2>
+<p>All routes are tagged with 47192,1 and 47192:0:PEER_ASN where PEER_ASN is the ASN the route was learned from. To exclude a route from being announced to all peers, add 47192,0. To exclude a route from being announced to a specific peer, add 47192:0:PEER_ASN (47192,PEER_ASN will work too if the peer&#39;s ASN fits in a 16-bit integer).</p>
+<p>The route servers pass along all communities to peers (NO_EXPORT for example).</p>
+
+<h3>Informational Communities</h3>
+<table>
+    <thead>
+    <tr>
+        <th>Community</th>
+        <th>Large Community</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>47192:47192</td>
+        <td>47192:1:47192</td>
+        <td>Added to all routes</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>47192:2:x</td>
+        <td>Learned from ASx</td>
+    </tr>
+    </tbody>
+</table>
+
+<h3>Action Communities</h3>
+<table>
+    <thead>
+    <tr>
+        <th>Community</th>
+        <th>Large Community</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>47192:0</td>
+        <td>47192:0:0</td>
+        <td>Don&#39;t announce to any peer</td>
+    </tr>
+    <tr>
+        <td>47192:x</td>
+        <td>47192:0:x</td>
+        <td>Don&#39;t announce to ASx</td>
+    </tr>
+    <tr>
+        <td>65535:666</td>
+        <td>47192:666:0</td>
+        <td>Blackhole (set nexthop to .251/::251)</td>
+    </tr>
+    </tbody>
+</table>
+
+<h2>Members</h2>
+<p>There are 17 members on the exchange.</p>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>ASN</th>
+        <th>Callsign</th>
+        <th>Port</th>
+        <th>IPs</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for peer in peers %}
+    <tr>
+        <td><a href="https://arix.dev">{{ peer["name"] }}</a></td>
+        <td><a href="https://peeringdb.com/asn/{{ peer["asn"] }}">{{ peer["asn"] }}</a></td>
+        <td>{{ peer["callsign"] }}</td>
+        <td>{{ (peer["speed"]/1000)|round|int }}G</td>
+        <td>{{ peer["ipv4"] }}<br>{{ peer["ipv6"] }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<footer>
+    ARIX | Amateur Radio Internet Exchange. FCC Callsign N7ARX.
+</footer>
+
+</body>
+</html>
