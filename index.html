@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
     <title>ARIX | Amateur Radio Internet Exchange</title>
-    <link href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css" rel="stylesheet">
+    <link href="water.min.css" rel="stylesheet">
 
     <style>
         :root {
@@ -26,6 +26,10 @@
             --variable: #acacac;
             --highlight: #ffffff;
         }
+
+        a {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -36,20 +40,20 @@
 
 <h2>Connectivity</h2>
 <ul>
+    <li>SMF 1G-LX / 10G-LR or RJ45 (1G) - Hurricane Electric FMT2, Fremont, CA</li>
     <li>2.4GHz 802.11n - Portland, OR</li>
     <li>2.4GHz/5GHz 802.11n - Flagstaff, AZ</li>
-    <li>SMF 1G-LX / 10G-LR or RJ45 (1G) - Hurricane Electric FMT2, Fremont, CA</li>
-    <li>Virtual Machine - contact us for more information</li>
+    <li>Virtual Machine</li>
 </ul>
 
 <h2>Contact</h2>
-The ARIX team can be contacted by email at info@arix.dev, or join #arix on libera.chat for general discussion.
+Send us an email at info@arix.dev
 
 <h2>Policy</h2>
 If an ARIX member cause issues for the exchange, other members, or the internet at large, intentionally or unintentionally, the offending port may be brought down until the issue is corrected.
 <ul>
     <li>Only announce IP space that you're authorized to announce.</li>
-    <li>Only IPv4, ARP, IPv6, and NDP L2 protocols are permitted.</li>
+    <li>Only 0x0800 (IPv4), 0x0806 (ARP), and 0x86dd (IPv6) ethertypes are permitted.</li>
     <li>Only one MAC address per port without prior authorization.</li>
 </ul>
 
@@ -64,9 +68,7 @@ If an ARIX member cause issues for the exchange, other members, or the internet 
 <p>The route servers run <a href="https://bird.network.cz">BIRD</a> and <a href="https://pathvector.io">Pathvector</a> and enforce strict IRR, RPKI, max-prefix, and Tier 1 ASN filtering.</p>
 <p>Please keep your PeeringDB page up to date, as configuration profiles are built automatically.</p>
 
-<h2>BGP Communities</h2>
-<p>All routes are tagged with 47192,1 and 47192:0:PEER_ASN where PEER_ASN is the ASN the route was learned from. To exclude a route from being announced to all peers, add 47192,0. To exclude a route from being announced to a specific peer, add 47192:0:PEER_ASN (47192,PEER_ASN will work too if the peer&#39;s ASN fits in a 16-bit integer).</p>
-<p>The route servers pass along all communities to peers (NO_EXPORT for example).</p>
+<p>The route servers pass along all communities to peers (NO_EXPORT for example). They also add information communities and accept action communities from peers:</p>
 
 <h3>Informational Communities</h3>
 <table>
@@ -135,7 +137,7 @@ If an ARIX member cause issues for the exchange, other members, or the internet 
     
     <tr>
         <td><a href="https://arix.dev">ARIX</a></td>
-        <td><a href="https://peeringdb.com/asn/44977">44977</a></td>
+        <td><a asn href="https://peeringdb.com/asn/">44977</a></td>
         <td>N7ARX</td>
         <td>10G</td>
         <td>44.190.42.2<br>2602:801:30ff::2</td>
@@ -143,7 +145,7 @@ If an ARIX member cause issues for the exchange, other members, or the internet 
     
     <tr>
         <td><a href="https://arix.dev">Nathan Sales</a></td>
-        <td><a href="https://peeringdb.com/asn/34553">34553</a></td>
+        <td><a asn href="https://peeringdb.com/asn/">34553</a></td>
         <td>KJ7DMC</td>
         <td>10G</td>
         <td>44.190.42.3<br>2602:801:30ff::3</td>
@@ -151,7 +153,7 @@ If an ARIX member cause issues for the exchange, other members, or the internet 
     
     <tr>
         <td><a href="https://arix.dev">Airgapped</a></td>
-        <td><a href="https://peeringdb.com/asn/6556">6556</a></td>
+        <td><a asn href="https://peeringdb.com/asn/">6556</a></td>
         <td>KC7GDY</td>
         <td>10G</td>
         <td>44.190.42.4<br>2602:801:30ff::4</td>
@@ -159,7 +161,7 @@ If an ARIX member cause issues for the exchange, other members, or the internet 
     
     <tr>
         <td><a href="https://arix.dev">10VPN Research Network</a></td>
-        <td><a href="https://peeringdb.com/asn/49134">49134</a></td>
+        <td><a asn href="https://peeringdb.com/asn/">49134</a></td>
         <td>VE7ALB</td>
         <td>1G</td>
         <td>44.190.42.5<br>2602:801:30ff::5</td>
@@ -167,7 +169,7 @@ If an ARIX member cause issues for the exchange, other members, or the internet 
     
     <tr>
         <td><a href="https://arix.dev">AZSignShop</a></td>
-        <td><a href="https://peeringdb.com/asn/60564">60564</a></td>
+        <td><a asn href="https://peeringdb.com/asn/">60564</a></td>
         <td>KC7GDY</td>
         <td>10G</td>
         <td>44.190.42.6<br>2602:801:30ff::6</td>
@@ -175,7 +177,7 @@ If an ARIX member cause issues for the exchange, other members, or the internet 
     
     <tr>
         <td><a href="https://arix.dev">Keaton Alexander Guger Lair</a></td>
-        <td><a href="https://peeringdb.com/asn/21957">21957</a></td>
+        <td><a asn href="https://peeringdb.com/asn/">21957</a></td>
         <td>VE5LPL</td>
         <td>10G</td>
         <td>44.190.42.7<br>2602:801:30ff::7</td>
@@ -183,7 +185,7 @@ If an ARIX member cause issues for the exchange, other members, or the internet 
     
     <tr>
         <td><a href="https://arix.dev">Two P</a></td>
-        <td><a href="https://peeringdb.com/asn/6140">6140</a></td>
+        <td><a asn href="https://peeringdb.com/asn/">6140</a></td>
         <td>K6MPP & KC6GNJ</td>
         <td>10G</td>
         <td>44.190.42.8<br>2602:801:30ff::8</td>
@@ -191,7 +193,7 @@ If an ARIX member cause issues for the exchange, other members, or the internet 
     
     <tr>
         <td><a href="https://arix.dev">617A Corporation</a></td>
-        <td><a href="https://peeringdb.com/asn/399135">399135</a></td>
+        <td><a asn href="https://peeringdb.com/asn/">399135</a></td>
         <td>KJ7THM</td>
         <td>10G</td>
         <td>44.190.42.9<br>2602:801:30ff::9</td>
@@ -199,7 +201,7 @@ If an ARIX member cause issues for the exchange, other members, or the internet 
     
     <tr>
         <td><a href="https://arix.dev">AetherPaw</a></td>
-        <td><a href="https://peeringdb.com/asn/22059">22059</a></td>
+        <td><a asn href="https://peeringdb.com/asn/">22059</a></td>
         <td>K2MOW</td>
         <td>10G</td>
         <td>44.190.42.10<br>2602:801:30ff::10</td>
@@ -207,7 +209,7 @@ If an ARIX member cause issues for the exchange, other members, or the internet 
     
     <tr>
         <td><a href="https://arix.dev">Ansible Networks</a></td>
-        <td><a href="https://peeringdb.com/asn/14570">14570</a></td>
+        <td><a asn href="https://peeringdb.com/asn/">14570</a></td>
         <td>KF6DMA</td>
         <td>10G</td>
         <td>44.190.42.11<br>2602:801:30ff::11</td>
@@ -215,7 +217,7 @@ If an ARIX member cause issues for the exchange, other members, or the internet 
     
     <tr>
         <td><a href="https://arix.dev">YuYan Research Network</a></td>
-        <td><a href="https://peeringdb.com/asn/207292">207292</a></td>
+        <td><a asn href="https://peeringdb.com/asn/">207292</a></td>
         <td>K6TTI</td>
         <td>10G</td>
         <td>44.190.42.12<br>2602:801:30ff::12</td>
@@ -223,7 +225,7 @@ If an ARIX member cause issues for the exchange, other members, or the internet 
     
     <tr>
         <td><a href="https://arix.dev">Internet Technology Laboratory</a></td>
-        <td><a href="https://peeringdb.com/asn/38254">38254</a></td>
+        <td><a asn href="https://peeringdb.com/asn/">38254</a></td>
         <td>BM4LOB</td>
         <td>1G</td>
         <td>44.190.42.13<br>2602:801:30ff::13</td>
@@ -231,7 +233,7 @@ If an ARIX member cause issues for the exchange, other members, or the internet 
     
     <tr>
         <td><a href="https://arix.dev">SteveYi Network Service</a></td>
-        <td><a href="https://peeringdb.com/asn/60614">60614</a></td>
+        <td><a asn href="https://peeringdb.com/asn/">60614</a></td>
         <td>BM5GRC</td>
         <td>1G</td>
         <td>44.190.42.14<br>2602:801:30ff::14</td>
@@ -239,7 +241,7 @@ If an ARIX member cause issues for the exchange, other members, or the internet 
     
     <tr>
         <td><a href="https://arix.dev">ISC F Root</a></td>
-        <td><a href="https://peeringdb.com/asn/27321">27321</a></td>
+        <td><a asn href="https://peeringdb.com/asn/">27321</a></td>
         <td>W3ZUL</td>
         <td>1G</td>
         <td>44.190.42.15<br>2602:801:30ff::15</td>
@@ -247,7 +249,7 @@ If an ARIX member cause issues for the exchange, other members, or the internet 
     
     <tr>
         <td><a href="https://arix.dev">AS112</a></td>
-        <td><a href="https://peeringdb.com/asn/112">112</a></td>
+        <td><a asn href="https://peeringdb.com/asn/">112</a></td>
         <td>N7ARX</td>
         <td>10G</td>
         <td>44.190.42.252<br>2602:801:30ff::252</td>
@@ -255,7 +257,7 @@ If an ARIX member cause issues for the exchange, other members, or the internet 
     
     <tr>
         <td><a href="https://arix.dev">ARIX Route Server</a></td>
-        <td><a href="https://peeringdb.com/asn/47192">47192</a></td>
+        <td><a asn href="https://peeringdb.com/asn/">47192</a></td>
         <td>N7ARX</td>
         <td>10G</td>
         <td>44.190.42.253<br>2602:801:30ff::253</td>
@@ -263,7 +265,7 @@ If an ARIX member cause issues for the exchange, other members, or the internet 
     
     <tr>
         <td><a href="https://arix.dev">ARIX Route Server</a></td>
-        <td><a href="https://peeringdb.com/asn/47192">47192</a></td>
+        <td><a asn href="https://peeringdb.com/asn/">47192</a></td>
         <td>N7ARX</td>
         <td>10G</td>
         <td>44.190.42.254<br>2602:801:30ff::254</td>
@@ -273,7 +275,7 @@ If an ARIX member cause issues for the exchange, other members, or the internet 
 </table>
 
 <footer>
-    ARIX | Amateur Radio Internet Exchange. FCC Callsign N7ARX.
+    Amateur Radio Internet Exchange | FCC Callsign N7ARX
 </footer>
 
 </body>
