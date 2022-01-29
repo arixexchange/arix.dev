@@ -11,6 +11,14 @@
   shell: pathvector g
   when: pathvector_config.changed
 
+- name: Add crontab entry
+  cron:
+    name: Pathvector generate
+    user: root
+    job: /usr/local/bin/pathvector generate
+    minute: 0
+    hour: "*/12"
+
 - name: Add BGP aliases
   copy:
     content: |
