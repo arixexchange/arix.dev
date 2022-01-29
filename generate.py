@@ -51,7 +51,7 @@ with open("web/ixf.json", "w") as ixf_file:
             ]
         })
 
-        ixf_file.write(json.dumps({
+    ixf_file.write(json.dumps({
         "version": "1.0",
         "ixp_list": [
             {
