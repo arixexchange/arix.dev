@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
     <title>ARIX | Amateur Radio Internet Exchange</title>
-    <link href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css" rel="stylesheet">
+    <link href="water.min.css" rel="stylesheet">
 
     <style>
         :root {
@@ -26,6 +26,10 @@
             --variable: #acacac;
             --highlight: #ffffff;
         }
+
+        a {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -36,20 +40,20 @@
 
 <h2>Connectivity</h2>
 <ul>
+    <li>SMF 1G-LX / 10G-LR or RJ45 (1G) - Hurricane Electric FMT2, Fremont, CA</li>
     <li>2.4GHz 802.11n - Portland, OR</li>
     <li>2.4GHz/5GHz 802.11n - Flagstaff, AZ</li>
-    <li>SMF 1G-LX / 10G-LR or RJ45 (1G) - Hurricane Electric FMT2, Fremont, CA</li>
-    <li>Virtual Machine - contact us for more information</li>
+    <li>Virtual Machine</li>
 </ul>
 
 <h2>Contact</h2>
-The ARIX team can be contacted by email at info@arix.dev, or join #arix on libera.chat for general discussion.
+Send us an email at info@arix.dev
 
 <h2>Policy</h2>
 If an ARIX member cause issues for the exchange, other members, or the internet at large, intentionally or unintentionally, the offending port may be brought down until the issue is corrected.
 <ul>
     <li>Only announce IP space that you're authorized to announce.</li>
-    <li>Only IPv4, ARP, IPv6, and NDP L2 protocols are permitted.</li>
+    <li>Only 0x0800 (IPv4), 0x0806 (ARP), and 0x86dd (IPv6) ethertypes are permitted.</li>
     <li>Only one MAC address per port without prior authorization.</li>
 </ul>
 
@@ -64,9 +68,7 @@ If an ARIX member cause issues for the exchange, other members, or the internet 
 <p>The route servers run <a href="https://bird.network.cz">BIRD</a> and <a href="https://pathvector.io">Pathvector</a> and enforce strict IRR, RPKI, max-prefix, and Tier 1 ASN filtering.</p>
 <p>Please keep your PeeringDB page up to date, as configuration profiles are built automatically.</p>
 
-<h2>BGP Communities</h2>
-<p>All routes are tagged with 47192,1 and 47192:0:PEER_ASN where PEER_ASN is the ASN the route was learned from. To exclude a route from being announced to all peers, add 47192,0. To exclude a route from being announced to a specific peer, add 47192:0:PEER_ASN (47192,PEER_ASN will work too if the peer&#39;s ASN fits in a 16-bit integer).</p>
-<p>The route servers pass along all communities to peers (NO_EXPORT for example).</p>
+<p>The route servers pass along all communities to peers (NO_EXPORT for example). They also add information communities and accept action communities from peers:</p>
 
 <h3>Informational Communities</h3>
 <table>
@@ -135,7 +137,7 @@ If an ARIX member cause issues for the exchange, other members, or the internet 
     {% for peer in peers %}
     <tr>
         <td><a href="https://arix.dev">{{ peer["name"] }}</a></td>
-        <td><a href="https://peeringdb.com/asn/{{ peer["asn"] }}">{{ peer["asn"] }}</a></td>
+        <td><a asn href="https://peeringdb.com/asn/{{ peer[""] }}">{{ peer["asn"] }}</a></td>
         <td>{{ peer["callsign"] }}</td>
         <td>{{ (peer["speed"]/1000)|round|int }}G</td>
         <td>{{ peer["ipv4"] }}<br>{{ peer["ipv6"] }}</td>
@@ -145,7 +147,7 @@ If an ARIX member cause issues for the exchange, other members, or the internet 
 </table>
 
 <footer>
-    ARIX | Amateur Radio Internet Exchange. FCC Callsign N7ARX.
+    Amateur Radio Internet Exchange | FCC Callsign N7ARX
 </footer>
 
 </body>
