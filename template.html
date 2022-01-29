@@ -142,7 +142,7 @@ If an ARIX member cause issues for the exchange, other members, or the internet 
     {% for peer in peers %}
     <tr>
         <td><a href="https://arix.dev">{{ peer["name"] }}</a></td>
-        <td><a asn href="https://peeringdb.com/asn/{{ peer[""] }}">{{ peer["asn"] }}</a></td>
+        <td><a href="https://peeringdb.com/asn/{{ peer['asn'] }}">{{ peer["asn"] }}</a></td>
         <td>{{ peer["callsign"] }}</td>
         <td>{{ (peer["speed"]/1000)|round|int }}G</td>
         <td>{{ peer["ipv4"] }}<br>{{ peer["ipv6"] }}</td>
