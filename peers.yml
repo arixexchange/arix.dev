@@ -133,7 +133,7 @@ peers:
 
   - name: SteveYi Network Service
     website: https://steveyi.net/
-    asn: 60614
+    asn: 7480
     callsign: BM5GRC
     pop: Fremont, CA
     speed: 1000
