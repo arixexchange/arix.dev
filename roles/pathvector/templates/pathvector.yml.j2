@@ -3,6 +3,7 @@ router-id: {{ ipv4 }}
 keep-filtered: true
 kernel-export: false
 default-route: false
+rtr-server: routinator.ing.pdx1.as34553.net:3323
 templates:
   peer:
     passive: true
@@ -16,6 +17,14 @@ templates:
     listen4: {{ ipv4 }}
     listen6: {{ ipv6 }}
     announce-communities: [ "47192,47192" ]
+    pre-import: |
+      if ((65535, 666) ~ bgp_community) then {
+        if (net.type = NET_IP4 && net.len = 32) then {
+          bgp_next_hop = 44.190.42.251;
+        } else if (net.type = NET_IP6 && net.len = 128) then {
+          bgp_next_hop = 2602:801:30ff::251;
+        }
+      }
 
 peers:
 {% for peer in peers if peer["asn"] != 47192 %}
@@ -26,15 +35,6 @@ peers:
       - 47192,47192
       - 47192:1:47192
       - 47192:2:{{ peer["asn"] }}
-
-    pre-import: |
-      if ((65535, 666) ~ bgp_community) then {
-        if (net.type = NET_IP4 && net.len = 32) then {
-          bgp_next_hop = 44.190.42.251;
-        } else if (net.type = NET_IP6 && net.len = 128) then {
-          bgp_next_hop = 2602:801:30ff::251;
-        }
-      }
 
     pre-export: |
       if ((47192, 0) ~ bgp_community || (47192, 0, 0) ~ bgp_large_community) then reject;
