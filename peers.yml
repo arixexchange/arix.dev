@@ -153,6 +153,17 @@ peers:
     ipv6: "2602:801:30ff::15"
     email: danm@prime.gushi.org
 
+  - name: Packetframe
+    website: https://packetframe.com
+    asn: 968
+    callsign: KJ7DMC
+    pop: Fremont, CA
+    speed: 10000
+    switch: 1
+    ipv4: 44.190.42.16
+    ipv6: "2602:801:30ff::16"
+    email: noc@packetframe.com
+
   # IX Services
 
   # RTBH Server on the AS112 VM:
