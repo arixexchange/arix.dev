@@ -70,7 +70,7 @@ If an ARIX member cause issues for the exchange, other members, or the internet 
 <p>The route servers are BGP passive so your side must be configured as BGP active.</p>
 
 <h3>Remotely Triggered Blackhole (RTBH)</h3>
-<p>ARIX operates a blackhole server at 44.190.42.251 and 2602:801:30ff::251 with a static MAC of 66:66:de:ad:be:ef. Members may add the <a href="https://datatracker.ietf.org/doc/html/rfc7999">RFC7999</a> blackhole community (655335:666) to /32 IPv4 and /128 IPv6 routes to instruct the route servers to blackhole the route.</p>
+<p>ARIX operates a blackhole server at 44.190.42.251 and 2602:801:30ff::251 with a static MAC of 66:66:de:ad:be:ef. Members may add the <a href="https://datatracker.ietf.org/doc/html/rfc7999">RFC7999</a> blackhole community (65535:666) to /32 IPv4 and /128 IPv6 routes to instruct the route servers to blackhole the route.</p>
 
 <h3>BGP Communities</h3>
 <p>The route servers pass along all communities to peers (NO_EXPORT for example). They also add information communities and accept action communities from peers:</p>
