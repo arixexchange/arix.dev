@@ -56,8 +56,8 @@ peers:
 
   - name: Keaton Alexander Guger Lair
     website: "https://net.kagl.me"
-    asn: 21957
-    callsign: VE5LPL
+    asn: 970
+    callsign: VE5LP
     pop: Fremont, CA
     speed: 10000
     switch: 1
