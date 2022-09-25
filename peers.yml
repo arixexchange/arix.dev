@@ -163,6 +163,17 @@ peers:
     ipv4: 44.190.42.16
     ipv6: "2602:801:30ff::16"
     email: noc@packetframe.com
+    
+    - name: Zidane Bouabsa
+    website: http://as208529.net.eu.org
+    asn: 208529
+    callsign: F4IRF
+    pop: Fremont, CA
+    speed: 20000
+    switch: 2
+    ipv4: 44.190.42.17
+    ipv6: "2602:801:30ff::17"
+    email: noc@packetframe.com
 
   # IX Services
 
