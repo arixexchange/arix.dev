@@ -1,7 +1,8 @@
 asn: 47192
 router-id: {{ ipv4 }}
 keep-filtered: true
-kernel-export: false
+kernel:
+  export: false
 default-route: false
 rtr-server: routinator.ing.pdx1.as34553.net:3323
 templates:
@@ -16,8 +17,8 @@ templates:
     interpret-communities: false
     listen4: {{ ipv4 }}
     listen6: {{ ipv6 }}
-    announce-communities: [ "47192,47192" ]
-    pre-import: |
+    announce: [ "47192,47192" ]
+    post-import-filter: |
       if ((65535, 666) ~ bgp_community) then {
         if (net.type = NET_IP4 && net.len = 32) then {
           bgp_next_hop = 44.190.42.251;
@@ -31,7 +32,7 @@ peers:
   {{ peer["name"] }}:
     asn: {{ peer["asn"] }}
     template: peer
-    import-communities:
+    add-on-import:
       - 47192,47192
       - 47192:1:47192
       - 47192:2:{{ peer["asn"] }}
