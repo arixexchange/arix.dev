@@ -186,6 +186,17 @@ peers:
     ipv6: "2602:801:30ff::18"
     email: nate@natesales.net
 
+  - name: RJN Services
+    website: https://www.rjnservices.net
+    asn: 400719
+    callsign: W8RSN
+    pop: Fremont, CA
+    speed: 1000
+    switch: 2
+    ipv4: 44.190.42.19
+    ipv6: "2602:801:30ff::19"
+    email: rnavarro@rjnservices.net
+
   # IX Services
 
   # RTBH Server on the AS112 VM:
