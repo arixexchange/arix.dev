@@ -13,7 +13,7 @@ peers:
   - name: Nathan Sales
     website: "https://natesales.net/network"
     asn: 34553
-    callsign: KJ7DMC
+    callsign: K1DNS
     pop: Fremont, CA
     switch: 1
     speed: 40000
@@ -156,14 +156,14 @@ peers:
   - name: Packetframe
     website: https://packetframe.com
     asn: 968
-    callsign: KJ7DMC
+    callsign: K1DNS
     pop: Fremont, CA
     speed: 20000
     switch: 1
     ipv4: 44.190.42.16
     ipv6: "2602:801:30ff::16"
     email: noc@packetframe.com
-    
+
   - name: Zidane Bouabsa
     website: http://as208529.net.eu.org
     asn: 208529
@@ -178,7 +178,7 @@ peers:
   - name: Nathan Sales AS205907
     website: https://as205907.peeringdb.com
     asn: 205907
-    callsign: KJ7DMC
+    callsign: K1DNS
     pop: Fremont, CA
     speed: 20000
     switch: 2
