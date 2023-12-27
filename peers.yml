@@ -197,6 +197,19 @@ peers:
     ipv6: "2602:801:30ff::19"
     email: rnavarro@rjnservices.net
 
+  - name: Bay Area Mesh
+    website: https://bayareamesh.us
+    asn: 32681
+    callsign: KN6PLV
+    pop: Fremont, CA
+    speed: 1000
+    switch: 2
+    ipv4: 44.190.42.20
+    ipv6: "2602:801:30ff::20"
+    email: tim@bayareamesh.us
+    rack: fmt2.1500.06.51
+    ce: 4794
+
   # IX Services
 
   # RTBH Server on the AS112 VM:
