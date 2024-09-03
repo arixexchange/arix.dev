@@ -1,15 +1,4 @@
 peers:
-  - name: ARIX
-    website: "https://arix.dev"
-    asn: 44977
-    callsign: N7ARX
-    pop: Fremont, CA
-    switch: 1
-    speed: 10000
-    ipv4: 44.190.42.2
-    ipv6: 2602:801:30ff::2
-    email: info@arix.dev
-
   - name: Nathan Sales
     website: "https://natesales.net/network"
     asn: 34553
@@ -174,17 +163,6 @@ peers:
     ipv4: 44.190.42.17
     ipv6: "2602:801:30ff::17"
     email: f4irf@gmx.com
-
-  - name: Nathan Sales AS205907
-    website: https://as205907.peeringdb.com
-    asn: 205907
-    callsign: K1DNS
-    pop: Fremont, CA
-    speed: 20000
-    switch: 2
-    ipv4: 44.190.42.18
-    ipv6: "2602:801:30ff::18"
-    email: nate@natesales.net
 
   - name: RJN Services
     website: https://www.rjnservices.net
