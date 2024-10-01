@@ -188,6 +188,17 @@ peers:
     rack: fmt2.1500.06.51
     ce: 4794
 
+  - name: Ido Rosen
+    website: https://www.rosenresearch.com
+    asn: 54364
+    callsign: AI4RL
+    pop: Fremont, CA
+    speed: 10000
+    switch: 1
+    ipv4: 44.190.42.21
+    ipv6: "2602:801:30ff::21"
+    email: irosen@gmail.com
+
   # IX Services
 
   # RTBH Server on the AS112 VM:
