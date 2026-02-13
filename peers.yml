@@ -199,6 +199,17 @@ peers:
     ipv6: "2602:801:30ff::21"
     email: irosen@gmail.com
 
+  - name: Cooperative Computing Alliance
+    website: https://coopalliance.org
+    asn: 400566
+    callsign: KO6HPW
+    pop: Fremont, CA
+    speed: 10000
+    switch: 1
+    ipv4: 44.190.42.22
+    ipv6: "2602:801:30ff::22"
+    email: sergio@coopalliance.org
+
   # IX Services
 
   # RTBH Server on the AS112 VM:
