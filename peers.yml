@@ -210,6 +210,17 @@ peers:
     ipv6: "2602:801:30ff::22"
     email: sergio@coopalliance.org
 
+  - name: Gregory Shapiro
+    website: "https://as199518.net"
+    asn: 199518
+    callsign: DI6HMS
+    pop: Fremont, CA
+    speed: 1000
+    switch: 2
+    ipv4: 44.190.42.18
+    ipv6: "2602:801:30ff::18"
+    email: peering@as199518.net
+
   # IX Services
 
   # RTBH Server on the AS112 VM:
