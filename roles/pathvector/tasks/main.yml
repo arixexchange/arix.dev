@@ -5,6 +5,7 @@
   template:
     src: pathvector.yml.j2
     dest: /etc/pathvector.yml
+    mode: "0600"
   register: pathvector_config
 
 - name: Apply Pathvector config
