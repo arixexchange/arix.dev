@@ -1,5 +1,9 @@
 asn: 47192
 router-id: {{ ipv4 }}
+peeringdb-url: https://www.peeringdb.com/api
+{% if peeringdb_api_key is defined %}
+peeringdb-api-key: "{{ peeringdb_api_key }}"
+{% endif %}
 keep-filtered: true
 kernel:
   export: false
